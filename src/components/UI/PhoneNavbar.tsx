@@ -91,6 +91,11 @@ const PhoneNavLink = ({ isMenuOpen, toggleMenu }: NavLinkProps) => {
                 </li>
                 <li>
                     <a href="#" className="hover:text-blue-500 transition-colors duration-300">
+                        Skills
+                    </a>
+                </li>
+                <li>
+                    <a href="#" className="hover:text-blue-500 transition-colors duration-300">
                         Services
                     </a>
                 </li>

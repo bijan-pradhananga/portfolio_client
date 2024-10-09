@@ -1,7 +1,9 @@
-import Image from "next/image";
+import Home from "@/components/Pages/Home";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div>Hello</div>
+    <div className="mx-auto w-full max-w-screen-xl px-2 md:px-1">
+      <Home/>
+    </div>
   );
 }

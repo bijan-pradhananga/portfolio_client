@@ -4,6 +4,7 @@ import { BsMouse } from "react-icons/bs";
 import { FaChevronDown, FaInstagram } from "react-icons/fa";
 import { LuGithub } from "react-icons/lu";
 import { PiLinkedinLogo, PiReadCvLogo } from "react-icons/pi";
+import { homeInfo } from "./HomeInfo";
 
 const Home = () => {
   return ( 
@@ -36,10 +37,10 @@ const HomeIcons = () => {
 const HomeInfo = () => {
   return (
     <div className="col-span-2 relative lg:col-span-1 lg:order-2 max-w-xl">
-      <h1 className="font-bold text-3xl mb-2 lg:mb-4 lg:text-5xl">Bijan Pradhananga<span>👋</span></h1>
-      <h3 className="text-lg font-semibold text-gray-500">------- FullStack Developer</h3>
-      <p className="text-gray-500 mt-2  ">
-        Lorem ipsum dolor sit amet consectetur error a officiis, quis praesentium perferendis nam quas magni ea autem ipsa obcaecati temporibus totam doloribus molestias.
+      <h1 className="font-bold text-3xl mb-2 lg:mb-4 lg:text-5xl">{homeInfo.name}<span>👋</span></h1>
+      <h3 className="text-lg lg:text-xl font-semibold text-gray-500">------- {homeInfo.profession}</h3>
+      <p className="text-gray-500 mt-2 font-semibold">
+        {homeInfo.description}
       </p>
       <button className="mt-8 p-4 lg:p-5 flex gap-2 bg-black dark:bg-gray-800 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950 transition ease-in">
         <span>See Resume</span>

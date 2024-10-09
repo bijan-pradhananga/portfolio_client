@@ -21,13 +21,13 @@ const Home = () => {
 const HomeIcons = () => {
   return (
     <div className="flex flex-col justify-center gap-6 text-2xl mr-2 dark:text-white">
-      <Link href="https://www.instagram.com/bijan_pradhananga/" className="hover:shadow-lg transition-all ease-in">
+      <Link href="https://www.instagram.com/bijan_pradhananga/">
         <FaInstagram />
       </Link>
-      <Link href="https://www.linkedin.com/in/bijan-pradhananga-947b992ab/" className="hover:shadow-lg transition-all ease-in">
+      <Link href="https://www.linkedin.com/in/bijan-pradhananga-947b992ab/">
         <PiLinkedinLogo />
       </Link>
-      <Link href="https://github.com/bijan-pradhananga" className="hover:shadow-lg transition-all ease-in">
+      <Link href="https://github.com/bijan-pradhananga">
         <LuGithub />
       </Link>
     </div>
@@ -46,11 +46,12 @@ const HomeInfo = () => {
         <span>See Resume</span>
          <PiReadCvLogo className="text-2xl"/>
       </button>
-      <button className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
+      <Link href='#skills' className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
           <BsMouse className="text-2xl"/>
          <span className="mr-2">Scroll Down</span>
          <FaChevronDown className="mt-1"/>
-      </button>
+      </Link>
+  
     </div>
   );
 };

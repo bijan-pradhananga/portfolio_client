@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { useState } from "react";
 
 interface NavLinkProps {
@@ -53,7 +54,7 @@ const PhoneNavLink = ({ isMenuOpen, toggleMenu }: NavLinkProps) => {
     return (
         <div
             className={`${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                } fixed top-0 left-0 w-full h-full bg-gray-50 dark:bg-gray-900 bg-opacity-95 z-30 transition-transform duration-500 ease-in-out`}
+                } fixed top-0 left-0 w-full h-full bg-gray-50 dark:bg-gray-900 bg-opacity-95 dark:bg-opacity-95 z-30 transition-transform duration-500 ease-in-out`}
         >
             {/* Close Button (X) */}
             <button
@@ -79,30 +80,30 @@ const PhoneNavLink = ({ isMenuOpen, toggleMenu }: NavLinkProps) => {
             </button>
 
             <ul className="flex flex-col justify-center items-center h-full space-y-8 dark:text-white text-2xl font-semibold">
-                <li>
-                    <a href="#" className="hover:text-blue-500 transition-colors duration-300">
+                <li onClick={toggleMenu}>
+                    <Link href="#"  className="hover:text-blue-500 transition-colors duration-300">
                         Home
-                    </a>
+                    </Link>
                 </li>
-                <li>
-                    <a href="#" className="hover:text-blue-500 transition-colors duration-300">
+                <li onClick={toggleMenu}>
+                    <Link href="#about"   className="hover:text-blue-500 transition-colors duration-300" >
                         About
-                    </a>
+                    </Link>
                 </li>
-                <li>
-                    <a href="#skills" className="hover:text-blue-500 transition-colors duration-300">
+                <li onClick={toggleMenu}>
+                    <Link href="#skills"  className="hover:text-blue-500 transition-colors duration-300">
                         Skills
-                    </a>
+                    </Link>
                 </li>
-                <li>
-                    <a href="#" className="hover:text-blue-500 transition-colors duration-300">
+                <li onClick={toggleMenu}>
+                    <Link href="#"  className="hover:text-blue-500 transition-colors duration-300">
                         Projects
-                    </a>
+                    </Link>
                 </li>
-                <li>
-                    <a href="#" className="hover:text-blue-500 transition-colors duration-300">
+                <li onClick={toggleMenu}>
+                    <Link href="#contact"  className="hover:text-blue-500 transition-colors duration-300" >
                         Contact
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>

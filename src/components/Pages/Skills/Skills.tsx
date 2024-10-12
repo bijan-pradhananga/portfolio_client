@@ -1,4 +1,4 @@
-import { skills, SkillCategory } from "./SkillInfo"
+import {skills, SkillCategory } from "./SkillInfo"
 const Skills = () => {
     return (
         <section className="px-4 flex flex-col gap-5">
@@ -12,7 +12,7 @@ const Skills = () => {
 const SkillsHeader = () => {
     return (
         <div id="skillContainer" className="text-center">
-            <div>
+            <div className="mt-2">
                 <h1 className="font-bold text-3xl mb-2">Skills</h1>
                 <h3 className="font-semibold text-gray-500">My Technical Level</h3>
             </div>
@@ -31,7 +31,7 @@ const SkillSet = () => {
             }`} // Adjust for the third section
         >
             <h2 className="text-xl font-bold mb-6 lg:mb-12 text-center">{category.title}</h2>
-            <ul className="flex flex-wrap justify-center gap-3 p-1 lg:px-4">
+            <ul className="flex flex-wrap justify-center gap-3 p-2 lg:px-4">
                 {category.skills.map((skill, skillIndex) => (
                     <div
                         key={skillIndex}

@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <div className="mx-auto w-full max-w-screen-xl px-2 md:px-1">
       <Home />
-      <div id="about" className="py-8"></div>
+      <div id="about" className="py-8 lg:p-0"></div>
       <About />
       <div id="skills" className="py-10 lg:py-20"></div>
       <Skills />

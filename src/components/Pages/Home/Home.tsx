@@ -47,7 +47,7 @@ const HomeDetails = () => {
         <span>See Resume</span>
         <PiReadCvLogo className="text-2xl" />
       </button>
-      <Link href='#about' className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
+      <Link id="about" href='#about' className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
         <BsMouse className="text-2xl" />
         <span className="mr-2">Scroll Down</span>
         <FaChevronDown className="mt-1" />

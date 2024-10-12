@@ -12,7 +12,7 @@ const Home = () => {
       <div id="homeContainer" className=" grid grid-cols-2 lg:flex gap-x-2 gap-y-12 justify-center mt-5 lg:-mt-24 lg:gap-28">
         <HomeIcons />
         <HomeImage />
-        <HomeInfo />
+        <HomeDetails />
       </div>
     </section>
   );
@@ -34,7 +34,7 @@ const HomeIcons = () => {
   );
 };
 
-const HomeInfo = () => {
+const HomeDetails = () => {
   return (
     <div className="col-span-2 relative lg:col-span-1 lg:order-2 max-w-xl">
       <h1 className="font-bold text-3xl mb-2 lg:mb-4 lg:text-5xl">{homeInfo.name}<span>👋</span></h1>
@@ -46,7 +46,7 @@ const HomeInfo = () => {
         <span>See Resume</span>
          <PiReadCvLogo className="text-2xl"/>
       </button>
-      <Link href='#skills' className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
+      <Link href='#about' className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
           <BsMouse className="text-2xl"/>
          <span className="mr-2">Scroll Down</span>
          <FaChevronDown className="mt-1"/>

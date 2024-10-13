@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsMouse } from "react-icons/bs";
-import { FaChevronDown, FaInstagram } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import { homeInfo, socialType } from "./HomeInfo";
 import { PiReadCvLogo } from "react-icons/pi";
 

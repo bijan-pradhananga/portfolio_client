@@ -1,8 +1,5 @@
 import Link from "next/link"
-import { FaFacebookF } from "react-icons/fa"
-import { FaLinkedin } from "react-icons/fa6"
 import { MdEmail } from "react-icons/md"
-import { RiInstagramFill } from "react-icons/ri"
 import { contactInfo, socailType } from "./ContactInfo"
 
 const Contact = () => {

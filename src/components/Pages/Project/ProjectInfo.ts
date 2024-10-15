@@ -14,7 +14,9 @@ let projectCollection: projectType[] = []; // Use let to allow reassignment
 
 const fetchProjects = async (): Promise<void> => {
     try {
-        const res = await fetch('https://portfolio-server-qjh8.onrender.com/project');
+        const res = await fetch('https://portfolio-server-qjh8.onrender.com/project', {
+            cache: 'no-store' 
+        });
         if (!res.ok) {
             throw new Error('Failed to fetch projects');
         }

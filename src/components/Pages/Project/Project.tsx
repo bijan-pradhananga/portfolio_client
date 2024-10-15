@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { projects, projectType } from './ProjectInfo'
+import {  projectType,projectCollection } from './ProjectInfo'
 
 const Project = () => {
   return (
@@ -23,7 +23,7 @@ const ProjectHeader = () => {
 const ProjectsContainer = () => {
   return (
     <main className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
-      {projects.map((project, index) => (
+      {projectCollection.map((project, index) => (
         <ProjectComponent project={project} key={index} />
       ))}
     </main >

@@ -11,7 +11,7 @@ export default function Page() {
       <Home />
       <div id="aboutM" className="py-8 lg:hidden"></div>
       <About />
-      <div id="skills" className="py-10 lg:py-20"></div>
+      <div id="qualification" className="py-10 lg:py-20"></div>
       <Qualification />
       <div id="skills" className="py-10 lg:py-20"></div>
       <Skills />

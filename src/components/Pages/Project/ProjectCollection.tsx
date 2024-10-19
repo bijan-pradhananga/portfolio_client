@@ -48,7 +48,6 @@ const ProjectCollection = () => {
     return (
         <>
             <div className="flex gap-2 mb-3">
-                {isLoading && <CategoryLoader />}
                 {categories.map((category) => (
                     <button
                         key={category}

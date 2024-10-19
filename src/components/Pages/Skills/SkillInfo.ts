@@ -6,6 +6,7 @@ import { FiFigma } from 'react-icons/fi';
 import { GrMysql } from 'react-icons/gr';
 import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
 import { SiMongodb, SiExpress, SiLinux, SiDaisyui, SiAdobephotoshop, SiCanva } from 'react-icons/si';
+import { TbBrandRedux } from 'react-icons/tb';
 import { VscVscode } from 'react-icons/vsc';
 
 // Type for individual skill
@@ -30,6 +31,7 @@ export const skills: SkillCategory[] = [
       { name: "BootStrap", icon: FaBootstrap },
       { name: "Tailwind", icon: RiTailwindCssFill },
       { name: "React", icon: FaReact },
+      { name: "Next", icon: TbBrandRedux },
       { name: "NextJS", icon: RiNextjsFill },
       { name: "Daisy UI", icon: SiDaisyui },
     ]

@@ -31,7 +31,7 @@ export const skills: SkillCategory[] = [
       { name: "BootStrap", icon: FaBootstrap },
       { name: "Tailwind", icon: RiTailwindCssFill },
       { name: "React", icon: FaReact },
-      { name: "Next", icon: TbBrandRedux },
+      { name: "Redux", icon: TbBrandRedux },
       { name: "NextJS", icon: RiNextjsFill },
       { name: "Daisy UI", icon: SiDaisyui },
     ]

@@ -1,14 +1,24 @@
-export interface projectType {
-    _id: string
+export interface CategoryType {
+    _id: string;
+    name: string;
+    createdAt: string;
+    updatedAt: string;
+  }
+  
+  export interface ProjectType {
+    _id: string;
     name: string;
     image: string;
     link: string;
-    description?: string; 
-}
-
-export interface ProjectApiResponse {
-    projects: projectType[]; 
-}
+    createdAt: string;
+    updatedAt: string;
+    category: CategoryType; // Add category field with type CategoryType
+    description?: string; // Optional description field
+  }
+  
+  export interface ProjectApiResponse {
+    projects: ProjectType[]; // Array of ProjectType objects
+  }
 
 // export const projects:projectType[] = [
 //     {name:'Speed Design',image:'/projects/speed.png',link:'https://speed-client.vercel.app/'},

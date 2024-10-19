@@ -95,16 +95,16 @@ const ProjectLoader = () => {
     )
 }
 
-const CategoryLoader = () => {
-    return (
-        <>
-            <div className='px-6 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
-            <div className='px-12 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
-            <div className='px-6 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
-            <div className='px-8 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
-        </>
+// const CategoryLoader = () => {
+//     return (
+//         <>
+//             <div className='px-6 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
+//             <div className='px-12 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
+//             <div className='px-6 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
+//             <div className='px-8 py-4 skeleton bg-gray-200 dark:bg-gray-600' ></div>
+//         </>
 
-    )
-}
+//     )
+// }
 
 export default ProjectCollection

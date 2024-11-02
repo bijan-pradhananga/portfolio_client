@@ -7,7 +7,7 @@ import { FiFigma } from 'react-icons/fi';
 import { GrMysql } from 'react-icons/gr';
 import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
 import { SiMongodb, SiExpress, SiLinux, SiDaisyui, SiAdobephotoshop, SiCanva, SiDotnet, SiMui, SiShadcnui } from 'react-icons/si';
-import { TbBrandRedux } from 'react-icons/tb';
+import { TbBrandRedux, TbBrandSocketIo } from 'react-icons/tb';
 import { VscVscode } from 'react-icons/vsc';
 
 // Type for individual skill
@@ -50,6 +50,7 @@ export const skills: SkillCategory[] = [
       { name: 'ASP.Net', icon: SiDotnet },
       { name: "MongoDB", icon: SiMongodb },
       { name: "MySQL", icon: GrMysql },
+      { name: "Socket IO", icon: TbBrandSocketIo }
     ]
   },
   {

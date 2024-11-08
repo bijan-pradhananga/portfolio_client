@@ -3,7 +3,6 @@ import Link from "next/link"
 import { MdEmail } from "react-icons/md"
 import { contactInfo, socailType } from "./ContactInfo"
 import Swal from 'sweetalert2'
-import { useEffect } from "react"
 
 interface ContactFormProps {
     submitForm: (event: React.FormEvent<HTMLFormElement>) => Promise<void>;
@@ -53,14 +52,12 @@ const Contact = () => {
         }).then((res) => res.json());
     
         if (res.success) {
-          window.alert('Your Message Has Been Delivered');
+            showSuccess();
         }else{
-          window.alert('Something Went Wrong! Try Again Later');
+            showError();
         }
       };
-    useEffect(()=>{
-        showError()
-    },[])
+
     return (
         <section className="grid sm:grid-cols-2 items-start gap-10 px-6 md:px-10  max-w-screen-xl mt-4">
             <ContactDetails />

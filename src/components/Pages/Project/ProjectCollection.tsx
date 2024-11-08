@@ -11,7 +11,7 @@ const ProjectCollection = () => {
     const [error, setError] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState<string>('All'); // Default to 'All'
 
-    const categories = ['All', 'Fullstack', 'App', 'Design']; // Include 'All' option
+    const categories = ['All', 'Fullstack', 'App', 'Frontend']; // Include 'All' option
 
     const fetchProjects = async (category: string = '') => {
         setIsLoading(true);

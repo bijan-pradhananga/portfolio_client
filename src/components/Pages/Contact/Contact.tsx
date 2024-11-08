@@ -1,12 +1,41 @@
+"use client"
 import Link from "next/link"
 import { MdEmail } from "react-icons/md"
 import { contactInfo, socailType } from "./ContactInfo"
 
+interface ContactFormProps {
+    submitForm: (event: React.FormEvent<HTMLFormElement>) => Promise<void>;
+}
+
 const Contact = () => {
+    const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget as HTMLFormElement);
+    
+        formData.append("access_key", process.env.NEXT_PUBLIC_ACCESS_KEY ?? "");
+        
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: json
+        }).then((res) => res.json());
+    
+        if (res.success) {
+          window.alert('Your Message Has Been Delivered');
+        }else{
+          window.alert('Something Went Wrong! Try Again Later');
+        }
+      };
     return (
         <section className="grid sm:grid-cols-2 items-start gap-10 px-6 md:px-10  max-w-screen-xl mt-4">
             <ContactDetails />
-            <ContactForm />
+            <ContactForm submitForm={submitForm}/>
         </section>
     )
 }
@@ -54,32 +83,32 @@ const ContactSocial = ({ social }:{social:socailType}) => {
     )
 }
 
-const ContactForm = () => {
+const ContactForm:React.FC<ContactFormProps> = ({submitForm}) => {
     return (
-        <form className="ml-auto space-y-4">
+        <form className="ml-auto space-y-4"  onSubmit={submitForm}>
             <input
-                type="text"
+                type="text" name="name"
                 placeholder="Name"
                 className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 dark:text-gray-300 dark:bg-inherit dark:border text-sm outline-blue-500 focus:bg-transparent"
             />
             <input
-                type="email"
+                type="email" name="email"
                 placeholder="Email"
                 className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 dark:text-gray-300 dark:bg-inherit dark:border  text-sm outline-blue-500 focus:bg-transparent"
             />
             <input
-                type="text"
+                type="text" name="subject"
                 placeholder="Subject"
                 className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 dark:text-gray-300 dark:bg-inherit dark:border  text-sm outline-blue-500 focus:bg-transparent"
             />
             <textarea
-                placeholder="Message"
+                placeholder="Message" name="message"
                 rows={6}
                 className="w-full rounded-md px-4 bg-gray-100 text-gray-800 dark:text-gray-300 dark:bg-inherit dark:border  text-sm pt-3 outline-blue-500 focus:bg-transparent"
                 defaultValue={""}
             />
             <button
-                type="button"
+                type="submit"
                 className="text-white font-bold bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6"
             >
                 Send

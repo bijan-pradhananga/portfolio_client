@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { ProjectApiResponse, ProjectType } from "./ProjectInfo";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,45 +23,51 @@ const ProjectCollection = () => {
         '67131603a43001594b20f5cd': 'Frontend',
     };
 
-    const fetchProjects = async (category: string = '') => {
+    const fetchProjects = useCallback(async (category: string = '') => {
         setIsLoading(true);
         setError(false);
         try {
             const url = category && category !== 'All' ? `/project?category=${category}` : '/project';
 
             // Create a timeout promise
-            const timeoutPromise = new Promise((_, reject) =>
+            const timeoutPromise = new Promise<never>((_, reject) =>
                 setTimeout(() => reject(new Error('API timeout')), API_TIMEOUT)
             );
 
             // Race between API call and timeout
             const { data }: { data: ProjectApiResponse } = await Promise.race([
                 API.get(url),
-                timeoutPromise as Promise<any>
+                timeoutPromise
             ]);
 
             setIsLoading(false);
       
-            setProjects(data.projects);
+            // Sort by latest first
+            const sortedProjects = data.projects.sort((a: ProjectType, b: ProjectType) => {
+                const dateA = new Date(a.createdAt).getTime();
+                const dateB = new Date(b.createdAt).getTime();
+                return dateB - dateA;
+            });
+            setProjects(sortedProjects);
         } catch (error) {
             // If API fails or times out, use fallback data from JSON
             console.error('Error fetching projects, using fallback data:', error);
             setIsLoading(false);
 
             // Filter projects from JSON based on category
-            let filteredProjects = (projectsData as any[]).map(project => ({
+            let filteredProjects = (projectsData as ProjectType[]).map(project => ({
                 ...project,
-                category: project.category?.$oid || project.category
-            })) as ProjectType[];
+                category: project.category
+            }));
 
             if (category && category !== 'All') {
                 filteredProjects = filteredProjects.filter(
-                    (project) => categoryMapping[project.category as any] === category
+                    (project) => categoryMapping[project.category as string] === category
                 );
             }
 
             // Sort by latest first
-            const sortedProjects = filteredProjects.sort((a: any, b: any) => {
+            const sortedProjects = filteredProjects.sort((a: ProjectType, b: ProjectType) => {
                 const dateA = new Date(a.createdAt).getTime();
                 const dateB = new Date(b.createdAt).getTime();
                 return dateB - dateA;
@@ -69,7 +75,7 @@ const ProjectCollection = () => {
 
             setProjects(sortedProjects);
         }
-    };
+    }, []);
 
     const handleCategoryChange = (category: string) => {
         setSelectedCategory(category);
@@ -78,7 +84,7 @@ const ProjectCollection = () => {
 
     useEffect(() => {
         fetchProjects(); // Fetch all projects by default on initial load
-    }, []);
+    }, [fetchProjects]);
 
     if (error) {
         return <p>Error fetching projects. Please try again later.</p>;

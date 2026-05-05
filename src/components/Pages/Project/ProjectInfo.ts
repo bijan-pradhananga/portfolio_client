@@ -12,7 +12,7 @@ export interface CategoryType {
     link: string;
     createdAt: string;
     updatedAt: string;
-    category: CategoryType; // Add category field with type CategoryType
+    category: CategoryType | string; // Add category field with type CategoryType
     description?: string; // Optional description field
   }
   

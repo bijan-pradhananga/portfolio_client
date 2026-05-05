@@ -10,7 +10,7 @@ export const qualificationData: QualificationItem[] = [
   {
     id: '4',
     period: '4/2025 - Present',
-    title: 'Junior Fullstack Developer',
+    title: 'Junior Developer',
     institution: 'Cellapp | Kathmandu, Nepal',
     type: 'experience',
   },

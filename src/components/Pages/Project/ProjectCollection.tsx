@@ -4,6 +4,7 @@ import { ProjectApiResponse, ProjectType } from "./ProjectInfo";
 import Image from "next/image";
 import Link from "next/link";
 import API from "@/app/config/config";
+import { motion } from "framer-motion";
 
 const ProjectCollection = () => {
     const [projects, setProjects] = useState<ProjectType[]>([]);
@@ -49,13 +50,15 @@ const ProjectCollection = () => {
         <>
             <div className="flex gap-2 mb-3">
                 {categories.map((category) => (
-                    <button
+                    <motion.button
                         key={category}
                         onClick={() => handleCategoryChange(category)}
+                        whileHover={{ y: -1 }}
+                        whileTap={{ scale: 0.98 }}
                         className={`px-3 py-1 rounded-xl shadow-md transition-colors duration-500 ease-in ${category === selectedCategory ? 'border border-black dark:border-white' : ''}`}
                     >
                         {category}
-                    </button>
+                    </motion.button>
                 ))}
             </div>
             <main className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
@@ -74,13 +77,20 @@ const ProjectCollection = () => {
 
 const ProjectComponent = ({ project }: { project: ProjectType }) => {
     return (
-        <div className='flex flex-col gap-2 shadow-lg px-5 py-8 rounded-lg dark:bg-gray-800'>
+        <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -4 }}
+            className='flex flex-col gap-2 shadow-lg px-5 py-8 rounded-lg dark:bg-gray-800'
+        >
             <div className='w-full bg-gray-300 aspect-video rounded-lg'>
                 <Image src={project.image} width={400} height={10} alt={project.name} className='w-full rounded shadow-lg object-cover dark:filter dark:brightness-90' />
             </div>
             <h2 className='text-xl font-semibold text-gray-600 mt-2 dark:text-gray-400'>{project.name}</h2>
             <Link href={project.link} target="_blank" className='text-gray-500 font-semibold'>Demo →</Link>
-        </div>
+        </motion.div>
 
     )
 }

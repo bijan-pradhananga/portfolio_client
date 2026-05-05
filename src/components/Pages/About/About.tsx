@@ -1,10 +1,17 @@
+"use client";
+
 import Image from "next/image"
 import { aboutInfo } from "./AboutInfo"
+import Reveal from "@/components/UI/Reveal"
 const About = () => {
     return (
         <section className="sm:flex items-center px-4 max-w-screen-xl">
-            <AboutImage/>
-            <AboutDetails />
+            <Reveal className="sm:w-1/2" delay={0.05}>
+                <AboutImage/>
+            </Reveal>
+            <Reveal className="sm:w-1/2" delay={0.12}>
+                <AboutDetails />
+            </Reveal>
         </section>
 
     )
@@ -12,7 +19,7 @@ const About = () => {
 
 const AboutImage = () => {
     return (
-        <div className="sm:w-1/2 p-10">
+        <div className="p-10">
             <div className="image object-center text-center rounded-xl overflow-hidden">
                 <Image src={aboutInfo.imageLink} width={450} height={450} alt="about" className="rounded-xl" />
             </div>
@@ -22,7 +29,7 @@ const AboutImage = () => {
 
 const AboutDetails = () => {
     return (
-        <div className="sm:w-1/2 p-2">
+        <div className="p-2">
             <div>
                 <h2 className="my-4 font-bold text-3xl md:text-4xl ">
                     About <span className="text-blue-500">Me</span>

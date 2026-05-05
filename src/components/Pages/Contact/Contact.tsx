@@ -4,6 +4,8 @@ import { MdEmail } from "react-icons/md"
 import { contactInfo, socailType } from "./ContactInfo"
 import Swal from 'sweetalert2'
 import { useState } from "react"
+import { motion } from "framer-motion"
+import Reveal from "@/components/UI/Reveal"
 
 interface ContactFormProps {
     loading: boolean,
@@ -69,8 +71,12 @@ const Contact = () => {
 
     return (
         <section className="grid sm:grid-cols-2 items-start gap-10 px-6 md:px-10  max-w-screen-xl mt-4">
-            <ContactDetails />
-            <ContactForm loading={loading} submitForm={submitForm} />
+            <Reveal delay={0.05}>
+                <ContactDetails />
+            </Reveal>
+            <Reveal delay={0.12}>
+                <ContactForm loading={loading} submitForm={submitForm} />
+            </Reveal>
         </section>
     )
 }
@@ -110,11 +116,15 @@ const ContactDetails = () => {
 
 const ContactSocial = ({ social }: { social: socailType }) => {
     return (
-        <li className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-            <Link href={social.link} target="_blank">
+        <motion.li
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-gray-200 h-10 w-10 rounded-full flex items-center justify-center shrink-0"
+        >
+            <Link href={social.link} target="_blank" rel="noopener noreferrer">
                 <social.icon className="text-xl" />
             </Link>
-        </li>
+        </motion.li>
     )
 }
 

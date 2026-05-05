@@ -4,7 +4,7 @@ type AboutInfoType = {
 }
 
 export const aboutInfo:AboutInfoType = {
-    imageLink: '/about.png',
+    imageLink: '/about.jpg',
     description: [
         "Hey! I’m Bijan — a Fullstack Developer at Cellapp Innovations Pvt. Ltd. based in Kathmandu, Nepal. I like building cool stuff and experimenting with ideas when I’m bored.",
         "Some of my work includes building features for Astro (astrologer booking, matchmaking) and SmartPalika (farmer & inventory systems), along with developing an Employee Management System with workflows and dashboards.I mainly focus on fullstack development, system design, and performance optimization. I enjoy making systems faster, cleaner, and easier to use.",

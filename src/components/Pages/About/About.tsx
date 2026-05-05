@@ -13,8 +13,8 @@ const About = () => {
 const AboutImage = () => {
     return (
         <div className="sm:w-1/2 p-10">
-            <div className="image object-center text-center">
-                <Image src={aboutInfo.imageLink} width={450} height={450} alt="about" />
+            <div className="image object-center text-center rounded-xl overflow-hidden">
+                <Image src={aboutInfo.imageLink} width={450} height={450} alt="about" className="rounded-xl" />
             </div>
         </div>
     )

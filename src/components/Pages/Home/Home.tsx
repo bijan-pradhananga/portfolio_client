@@ -43,10 +43,12 @@ const HomeDetails = () => {
       <p className="text-gray-500 mt-2 font-semibold">
         {homeInfo.description}
       </p>
-      <button className="mt-8 p-4 lg:p-5 flex gap-2 bg-black dark:bg-gray-800 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950 transition ease-in">
-        <span>See Resume</span>
-        <PiReadCvLogo className="text-2xl" />
-      </button>
+      <Link href="https://drive.google.com/file/d/1USi5Tf_fw6a44BwBU-5bCMjng8VtKBIJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <button className="mt-8 p-4 lg:p-5 flex gap-2 bg-black dark:bg-gray-800 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950 transition ease-in">
+          <span>See Resume</span>
+          <PiReadCvLogo className="text-2xl" />
+        </button>
+      </Link>
       <Link id="about" href='#about' className="hidden lg:flex mt-28 p-2 gap-2 absolute hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in dark:text-white font-semibold rounded-lg ">
         <BsMouse className="text-2xl" />
         <span className="mr-2">Scroll Down</span>

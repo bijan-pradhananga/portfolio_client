@@ -27,9 +27,15 @@ const AboutDetails = () => {
                 <h2 className="my-4 font-bold text-3xl md:text-4xl ">
                     About <span className="text-blue-500">Me</span>
                 </h2>
-                <p className="text-gray-500 font-semibold ">
-                    {aboutInfo.description}
-                </p>
+                                {Array.isArray(aboutInfo.description) ? (
+                                    aboutInfo.description.map((para: string, idx: number) => (
+                                        <p key={idx} className="text-gray-500 font-semibold mb-2">
+                                            {para}
+                                        </p>
+                                    ))
+                                ) : (
+                                    <p className="text-gray-500 font-semibold ">{aboutInfo.description}</p>
+                                )}
             </div>
         </div>
     )

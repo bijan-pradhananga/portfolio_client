@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';  
 import { BiLogoTypescript } from 'react-icons/bi';
 import { DiPhp, DiVisualstudio } from 'react-icons/di';
-import { FaGithub, FaGitAlt } from 'react-icons/fa';
+import { FaGitAlt } from 'react-icons/fa';
 import { FaHtml5, FaBootstrap, FaReact, FaCss3Alt, FaJs, FaNodeJs, FaLaravel, FaPython, FaJava } from 'react-icons/fa6';
 import { FiFigma } from 'react-icons/fi';
 import { GrMysql } from 'react-icons/gr';

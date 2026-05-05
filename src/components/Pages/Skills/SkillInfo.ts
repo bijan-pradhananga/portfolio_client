@@ -7,6 +7,7 @@ import { FiFigma } from 'react-icons/fi';
 import { GrMysql } from 'react-icons/gr';
 import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
 import { SiMongodb, SiExpress, SiLinux, SiDaisyui, SiAdobephotoshop, SiCanva, SiDotnet, SiMui, SiShadcnui } from 'react-icons/si';
+import { RiSupabaseLine } from "react-icons/ri";
 import { TbBrandRedux, TbBrandSocketIo } from 'react-icons/tb';
 import { VscVscode } from 'react-icons/vsc';
 
@@ -50,14 +51,15 @@ export const skills: SkillCategory[] = [
       { name: 'ASP.Net', icon: SiDotnet },
       { name: "MongoDB", icon: SiMongodb },
       { name: "MySQL", icon: GrMysql },
-      { name: "Socket IO", icon: TbBrandSocketIo }
+      { name: "Socket IO", icon: TbBrandSocketIo },
+      { name: "Supabase", icon: RiSupabaseLine}
     ]
   },
   {
     title: "Other Skills",
     skills: [
       { name: "Git", icon: FaGitAlt },
-      { name: "GitHub", icon: FaGithub },
+      // { name: "GitHub", icon: FaGithub },
       { name: "Linux", icon: SiLinux },
       { name: "Java", icon: FaJava },
       { name: 'TypeScript', icon: BiLogoTypescript},

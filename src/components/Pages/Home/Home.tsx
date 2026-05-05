@@ -19,7 +19,7 @@ const Home = () => {
         <Reveal className="lg:order-3" delay={0.15}>
           <HomeImage />
         </Reveal>
-        <Reveal className="lg:order-2" delay={0.1}>
+        <Reveal className="col-span-2 lg:col-span-1 lg:order-2" delay={0.1}>
           <HomeDetails />
         </Reveal>
       </div>

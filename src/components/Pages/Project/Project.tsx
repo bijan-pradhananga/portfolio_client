@@ -3,7 +3,7 @@ import ProjectCollection from './ProjectCollection'
 
 const Project = () => {
   return (
-    <section className="max-w-screen-xl mt-4 px-6">
+    <section className="max-w-screen-xl mt-4 px-4">
       <ProjectHeader />
       <ProjectCollection/>
     </section>

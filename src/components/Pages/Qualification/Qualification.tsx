@@ -25,7 +25,7 @@ const Qualification = () => {
     }
 
     return (
-        <section className='max-w-screen-xl mt-4 px-6'>
+        <section className='max-w-screen-xl mt-4 px-4'>
             <Reveal>
                 <div>
                     <h1 className="font-bold text-3xl lg:text-4xl mb-5">Qualification</h1>

@@ -29,7 +29,7 @@ const AboutImage = () => {
 
 const AboutDetails = () => {
     return (
-        <div className="p-2">
+        <div>
             <div>
                 <h2 className="my-4 font-bold text-3xl md:text-4xl ">
                     About <span className="text-blue-500">Me</span>

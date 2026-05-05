@@ -70,7 +70,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="grid sm:grid-cols-2 items-start gap-10 px-6 md:px-10  max-w-screen-xl mt-4">
+        <section className="grid sm:grid-cols-2 items-start gap-10 px-4 md:px-10  max-w-screen-xl mt-4">
             <Reveal delay={0.05}>
                 <ContactDetails />
             </Reveal>

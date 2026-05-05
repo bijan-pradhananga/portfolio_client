@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import API from "@/app/config/config";
 import { motion } from "framer-motion";
+import projectsData from "./myPortfolio.projects.json";
 
 const ProjectCollection = () => {
     const [projects, setProjects] = useState<ProjectType[]>([]);
@@ -13,23 +14,60 @@ const ProjectCollection = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('All'); // Default to 'All'
 
     const categories = ['All', 'Fullstack', 'App', 'Frontend']; // Include 'All' option
+    const API_TIMEOUT = 10000; // 10 seconds timeout
+
+    // Category ID to name mapping
+    const categoryMapping: { [key: string]: string } = {
+        '671315ffa43001594b20f5cb': 'App',
+        '671315f9a43001594b20f5c9': 'Fullstack',
+        '67131603a43001594b20f5cd': 'Frontend',
+    };
 
     const fetchProjects = async (category: string = '') => {
         setIsLoading(true);
         setError(false);
         try {
-            // If category is 'All', fetch all projects
-            const url = category && category !== 'All' ? `/project?category=${category}` : '/project'; // Only use the endpoint since baseURL is set in API
+            const url = category && category !== 'All' ? `/project?category=${category}` : '/project';
 
-            // Using axios to make the GET request
-            const { data }: { data: ProjectApiResponse } = await API.get(url);
+            // Create a timeout promise
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('API timeout')), API_TIMEOUT)
+            );
+
+            // Race between API call and timeout
+            const { data }: { data: ProjectApiResponse } = await Promise.race([
+                API.get(url),
+                timeoutPromise as Promise<any>
+            ]);
 
             setIsLoading(false);
-            setProjects(data.projects); // Update state with latest projects
+      
+            setProjects(data.projects);
         } catch (error) {
+            // If API fails or times out, use fallback data from JSON
+            console.error('Error fetching projects, using fallback data:', error);
             setIsLoading(false);
-            setError(true);
-            console.error('Error fetching projects:', error);
+
+            // Filter projects from JSON based on category
+            let filteredProjects = (projectsData as any[]).map(project => ({
+                ...project,
+                category: project.category?.$oid || project.category
+            })) as ProjectType[];
+
+            if (category && category !== 'All') {
+                filteredProjects = filteredProjects.filter(
+                    (project) => categoryMapping[project.category as any] === category
+                );
+            }
+
+            // Sort by latest first
+            const sortedProjects = filteredProjects.sort((a: any, b: any) => {
+                const dateA = new Date(a.createdAt).getTime();
+                const dateB = new Date(b.createdAt).getTime();
+                return dateB - dateA;
+            });
+
+            setProjects(sortedProjects);
         }
     };
 

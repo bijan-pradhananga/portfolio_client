@@ -11,6 +11,16 @@
             "__v": 0
         },
         {
+            "_id": "69fd85adee3f1446b66c8624",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778222508/portfolio/gallery/1778222505178-409828768-IMG_20241124_141223__01__01.jpg",
+            "publicId": "portfolio/gallery/1778222505178-409828768-IMG_20241124_141223__01__01",
+            "resourceType": "image",
+            "category": "coding",
+            "createdAt": "2026-05-08T06:30:40.836Z",
+            "updatedAt": "2026-05-08T06:30:40.836Z",
+            "__v": 0
+        },
+        {
             "_id": "69fd8320ee3f1446b66c8609",
             "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778221855/portfolio/gallery/1778221851673-100789049-20231214_141118__01.jpg",
             "publicId": "portfolio/gallery/1778221851673-100789049-20231214_141118__01",
@@ -28,16 +38,6 @@
             "category": "coding",
             "createdAt": "2026-05-08T06:33:59.903Z",
             "updatedAt": "2026-05-08T06:33:59.903Z",
-            "__v": 0
-        },
-        {
-            "_id": "69fd85adee3f1446b66c8624",
-            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778222508/portfolio/gallery/1778222505178-409828768-IMG_20241124_141223__01__01.jpg",
-            "publicId": "portfolio/gallery/1778222505178-409828768-IMG_20241124_141223__01__01",
-            "resourceType": "image",
-            "category": "coding",
-            "createdAt": "2026-05-08T06:41:49.836Z",
-            "updatedAt": "2026-05-08T06:41:49.836Z",
             "__v": 0
         },
         {
@@ -108,6 +108,26 @@
             "category": "others",
             "createdAt": "2026-05-08T08:25:42.822Z",
             "updatedAt": "2026-05-08T08:25:42.822Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fdaa33902f77ac163fed4d",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778231858/portfolio/gallery/1778231854216-951909515-IMG_20250818_203246.jpg",
+            "publicId": "portfolio/gallery/1778231854216-951909515-IMG_20250818_203246",
+            "resourceType": "image",
+            "category": "others",
+            "createdAt": "2026-05-08T09:17:39.195Z",
+            "updatedAt": "2026-05-08T09:17:39.195Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fdad65902f77ac163fed5e",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778232677/portfolio/gallery/1778232672144-768035297-IMG_20240820_174924.jpg",
+            "publicId": "portfolio/gallery/1778232672144-768035297-IMG_20240820_174924",
+            "resourceType": "image",
+            "category": "others",
+            "createdAt": "2026-05-08T09:31:17.943Z",
+            "updatedAt": "2026-05-08T09:31:17.943Z",
             "__v": 0
         }
     ]

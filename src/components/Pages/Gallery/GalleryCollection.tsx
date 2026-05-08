@@ -8,7 +8,7 @@ import galleryData from './gallery.json';
 
 type CategoryOption = { key: 'All' | GalleryCategory; label: string };
 
-const API_TIMEOUT = 10000;
+const API_TIMEOUT = 5000; // 5 seconds timeout
 
 const GalleryCollection = () => {
     const [gallery, setGallery] = useState<GalleryItem[]>([]);

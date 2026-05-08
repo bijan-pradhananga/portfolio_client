@@ -14,7 +14,7 @@ const ProjectCollection = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('All'); // Default to 'All'
 
     const categories = ['All', 'Fullstack', 'App', 'Frontend']; // Include 'All' option
-    const API_TIMEOUT = 10000; // 10 seconds timeout
+    const API_TIMEOUT = 5000; // 5 seconds timeout
 
     // Category ID to name mapping
     const categoryMapping: { [key: string]: string } = {

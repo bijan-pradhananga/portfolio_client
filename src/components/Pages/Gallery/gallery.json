@@ -1,0 +1,114 @@
+{
+    "gallery": [
+        {
+            "_id": "69fd74c945e8f63e1ee5b6c5",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778218185/portfolio/gallery/1778218182283-407546717-IMG_20260411_183226.jpg",
+            "publicId": "portfolio/gallery/1778218182283-407546717-IMG_20260411_183226",
+            "resourceType": "image",
+            "category": "coding",
+            "createdAt": "2026-05-08T05:29:45.704Z",
+            "updatedAt": "2026-05-08T05:29:45.704Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd8320ee3f1446b66c8609",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778221855/portfolio/gallery/1778221851673-100789049-20231214_141118__01.jpg",
+            "publicId": "portfolio/gallery/1778221851673-100789049-20231214_141118__01",
+            "resourceType": "image",
+            "category": "travel",
+            "createdAt": "2026-05-08T06:30:56.069Z",
+            "updatedAt": "2026-05-08T06:30:56.069Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd83d7ee3f1446b66c8613",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778222039/portfolio/gallery/1778222035464-569597589-IMG_20260224_155919__01.jpg",
+            "publicId": "portfolio/gallery/1778222035464-569597589-IMG_20260224_155919__01",
+            "resourceType": "image",
+            "category": "coding",
+            "createdAt": "2026-05-08T06:33:59.903Z",
+            "updatedAt": "2026-05-08T06:33:59.903Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd85adee3f1446b66c8624",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778222508/portfolio/gallery/1778222505178-409828768-IMG_20241124_141223__01__01.jpg",
+            "publicId": "portfolio/gallery/1778222505178-409828768-IMG_20241124_141223__01__01",
+            "resourceType": "image",
+            "category": "coding",
+            "createdAt": "2026-05-08T06:41:49.836Z",
+            "updatedAt": "2026-05-08T06:41:49.836Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd89c3ee3f1446b66c863f",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778223554/portfolio/gallery/1778223550547-414128730-20231214_103418__02.jpg",
+            "publicId": "portfolio/gallery/1778223550547-414128730-20231214_103418__02",
+            "resourceType": "image",
+            "category": "travel",
+            "createdAt": "2026-05-08T06:59:15.063Z",
+            "updatedAt": "2026-05-08T06:59:15.063Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd8b16ee3f1446b66c865c",
+            "url": "https://res.cloudinary.com/dqtjulwfj/video/upload/v1778223891/portfolio/gallery/1778223880277-925691119-VID_20260507_234625_723.mp4",
+            "publicId": "portfolio/gallery/1778223880277-925691119-VID_20260507_234625_723",
+            "resourceType": "video",
+            "category": "video",
+            "createdAt": "2026-05-08T07:04:54.580Z",
+            "updatedAt": "2026-05-08T07:04:54.580Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd9788ee3f1446b66c8687",
+            "url": "https://res.cloudinary.com/dqtjulwfj/video/upload/v1778227077/portfolio/gallery/1778227072237-88384696-VID_20260507_234646_243%20%28online-video-cutter.com%29.mp4",
+            "publicId": "portfolio/gallery/1778227072237-88384696-VID_20260507_234646_243 (online-video-cutter.com)",
+            "resourceType": "video",
+            "category": "video",
+            "createdAt": "2026-05-08T07:58:00.292Z",
+            "updatedAt": "2026-05-08T07:58:00.292Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd9b201cf2993fc746419a",
+            "url": "https://res.cloudinary.com/dqtjulwfj/video/upload/v1778227996/portfolio/gallery/1778227992691-498855020-VID_20260508_011237_228.mp4",
+            "publicId": "portfolio/gallery/1778227992691-498855020-VID_20260508_011237_228",
+            "resourceType": "video",
+            "category": "video",
+            "createdAt": "2026-05-08T08:13:20.752Z",
+            "updatedAt": "2026-05-08T08:13:20.752Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd9cec1cf2993fc74641b2",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778228460/portfolio/gallery/1778228458108-311078007-Screenshot_20260107-132953__01__01.jpg",
+            "publicId": "portfolio/gallery/1778228458108-311078007-Screenshot_20260107-132953__01__01",
+            "resourceType": "image",
+            "category": "others",
+            "createdAt": "2026-05-08T08:21:00.491Z",
+            "updatedAt": "2026-05-08T08:21:00.491Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd9db81cf2993fc74641cb",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778228664/portfolio/gallery/1778228659006-129551061-IMG_20251109_062553__01.jpg",
+            "publicId": "portfolio/gallery/1778228659006-129551061-IMG_20251109_062553__01",
+            "resourceType": "image",
+            "category": "others",
+            "createdAt": "2026-05-08T08:24:24.972Z",
+            "updatedAt": "2026-05-08T08:24:24.972Z",
+            "__v": 0
+        },
+        {
+            "_id": "69fd9e061cf2993fc74641ce",
+            "url": "https://res.cloudinary.com/dqtjulwfj/image/upload/v1778228742/portfolio/gallery/1778228739606-63180267-20210505_101746.jpg",
+            "publicId": "portfolio/gallery/1778228739606-63180267-20210505_101746",
+            "resourceType": "image",
+            "category": "others",
+            "createdAt": "2026-05-08T08:25:42.822Z",
+            "updatedAt": "2026-05-08T08:25:42.822Z",
+            "__v": 0
+        }
+    ]
+}

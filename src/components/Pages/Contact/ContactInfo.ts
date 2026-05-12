@@ -15,8 +15,7 @@ export interface contactInfoType {
 }
 
 export const contactInfo:contactInfoType = {
-    details:`  Have some big idea or brand to develop and need help? Then reach out we'd
-               love to hear about your project and provide help.`,
+    details:`Interested in collaborating or have a project in mind? Feel free to get in touch—I'm always open to discussing new opportunities and creative ideas.`,
     mail: 'bijan2059@gmail.com',
     socials: [
         {name:'facebook',icon:FaFacebookF,link:'https://www.facebook.com/bijan.pradhananga'},

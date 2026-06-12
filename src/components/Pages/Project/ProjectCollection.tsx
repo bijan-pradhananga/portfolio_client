@@ -133,6 +133,9 @@ const ProjectComponent = ({ project }: { project: ProjectType }) => {
                 <Image src={project.image} width={400} height={10} alt={project.name} className='w-full rounded shadow-lg object-cover dark:filter dark:brightness-90' />
             </div>
             <h2 className='text-xl font-semibold text-gray-600 mt-2 dark:text-gray-400'>{project.name}</h2>
+            {project.description && (
+                <p className='text-sm text-gray-500 dark:text-gray-400 line-clamp-3'>{project.description}</p>
+            )}
             <Link href={project.link} target="_blank" className='text-gray-500 font-semibold'>Demo →</Link>
         </motion.div>
 

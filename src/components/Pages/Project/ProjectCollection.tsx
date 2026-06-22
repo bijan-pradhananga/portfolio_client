@@ -1,17 +1,21 @@
 'use client'
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { ProjectApiResponse, ProjectType } from "./ProjectInfo";
 import Image from "next/image";
 import Link from "next/link";
 import API from "@/app/config/config";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "./myPortfolio.projects.json";
+
+const ITEMS_PER_PAGE = 9;
 
 const ProjectCollection = () => {
     const [projects, setProjects] = useState<ProjectType[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState<string>('All'); // Default to 'All'
+    const [selectedCategory, setSelectedCategory] = useState<string>('All');
+    const [currentPage, setCurrentPage] = useState(1);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
     const categories = ['All', 'Fullstack', 'App', 'Frontend']; // Include 'All' option
     const API_TIMEOUT = 5000; // 5 seconds timeout
@@ -79,19 +83,33 @@ const ProjectCollection = () => {
 
     const handleCategoryChange = (category: string) => {
         setSelectedCategory(category);
-        fetchProjects(category); // Fetch projects based on selected category
+        setCurrentPage(1);
+        fetchProjects(category);
     };
 
+    const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+    const paginatedProjects = projects.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE
+    );
+
     useEffect(() => {
-        fetchProjects(); // Fetch all projects by default on initial load
+        fetchProjects();
     }, [fetchProjects]);
+
+    useEffect(() => {
+        if (sectionRef.current) {
+            const top = sectionRef.current.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    }, [currentPage]);
 
     if (error) {
         return <p>Error fetching projects. Please try again later.</p>;
     }
 
     return (
-        <>
+        <div ref={sectionRef}>
             <div className="flex gap-2 mb-3">
                 {categories.map((category) => (
                     <motion.button
@@ -105,15 +123,57 @@ const ProjectCollection = () => {
                     </motion.button>
                 ))}
             </div>
-            <main className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
-                {isLoading &&
-                    <> <ProjectLoader /> <ProjectLoader /> <ProjectLoader /></>
-                }
-                {!isLoading && !error && projects.map((project, index) => (
-                    <ProjectComponent project={project} key={index} />
-                ))}
-            </main>
-        </>
+            <AnimatePresence mode="wait">
+                <motion.main
+                    key={`${selectedCategory}-${currentPage}`}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -16 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'
+                >
+                    {isLoading &&
+                        <> <ProjectLoader /> <ProjectLoader /> <ProjectLoader /></>
+                    }
+                    {!isLoading && !error && paginatedProjects.map((project, index) => (
+                        <ProjectComponent project={project} key={index} />
+                    ))}
+                </motion.main>
+            </AnimatePresence>
+            {!isLoading && totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-6">
+                    <motion.button
+                        onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
+                        disabled={currentPage === 1}
+                        whileHover={{ y: -1 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-3 py-1 rounded-xl shadow-md disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300"
+                    >
+                        ←
+                    </motion.button>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                        <motion.button
+                            key={page}
+                            onClick={() => setCurrentPage(page)}
+                            whileHover={{ y: -1 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`px-3 py-1 rounded-xl shadow-md transition-colors duration-300 ${page === currentPage ? 'border border-black dark:border-white' : ''}`}
+                        >
+                            {page}
+                        </motion.button>
+                    ))}
+                    <motion.button
+                        onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                        whileHover={{ y: -1 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-3 py-1 rounded-xl shadow-md disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300"
+                    >
+                        →
+                    </motion.button>
+                </div>
+            )}
+        </div>
 
     );
 };
